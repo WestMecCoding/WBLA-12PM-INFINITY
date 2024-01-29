@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  /* loses the nav bar */
+  position: relative;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  /* loses the nav bar */
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+  /* slide animations */
+  animation: slide 20s infinite;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(204, 37, 18);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: red;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+.column1 {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+nav img {
+  width: 5vw;
+  display: block;
+}
+
+nav p {
+  white-space: nowrap;
+  position: absolute;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+  width: 100%;
+  height: 15vh;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  display: flex;
+}
+
+div#hamburger {
+  float: left;
+}
+
+div.hamburger-dropdown {
+  display: none;
+  position: absolute;
+}
+
+@media (max-width: 799px) {
+  #hamburger {
+    display: block;
+  }
+}
+
+div.links {
+  float: right;
+  display: flex;
+  margin-left: 50%;
+}
+a {
+  color: black;
+  text-decoration: none;
+  margin: 0 1em;
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  float: right;
+}
+nav a:hover {
+  color: yellow;
+}
+h1 {
+  color: #00448a;
+  font-size: 2.5rem;
+  font-family: sans-serif, "Arial";
+  margin: 2rem;
+}
+p {
+  margin: 3rem;
+}
